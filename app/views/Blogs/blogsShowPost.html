@@ -1,0 +1,57 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Blogs' /}
+
+#{set activePage:'blogs' /}
+#{include "_components/_menu.html" /}
+
+<section class="ui tertiary purple inverted segment">
+  <h1 class="ui header">
+    <i class="file outline icon"></i> 
+    ${post.title} - ${new Date(post.time).since()} (${post.comments.size()} comments)
+  </h1>
+  <section class="ui segment">
+    ${post.content}
+    <br>
+    <br>    
+    #{list items:post.comments, as:'comment'}
+      <div class="ui secondary purple horizontal segment">
+        <h4 class="ui header">
+          <img class="ui avatar image" src="/profile/getthumbnail/${comment.user.id}">
+          #{if user}<a href="/profile/${comment.user.id}">#{/if} 
+            ${comment.user.firstName} ${comment.user.lastName} 
+          #{if user}</a>#{/if}
+           - ${comment.subject}
+          ( ${new Date( comment.time ).since()} ) 
+        </h4>
+        <i class="chat icon"></i>
+        ${comment.content}<br>
+        
+        *{*** Show the comment remove button only to owner of that comment  ***}*
+        #{if user && comment.user.id==user.id}
+         <a href="/blogs/deleteComment/${post.id}/${comment.id}" class="ui circular button negative labeled icon" onClick="return(confirmDialog());"><i class="delete icon"></i>remove comment</a>
+        #{/if}
+      </div>
+      <br>
+    #{/list}#{else}
+      <div class="ui secondary  horizontal segment">
+        No comments yet.
+      </div>      
+    #{/else} 
+  </section> 
+  
+  #{if user}
+  <div class="ui medium image">
+    <label class="ui purple ribbon label"><i class="icon inverted circular orange chat"></i>Leave comment please</label>
+  </div>    
+  <section class="ui form segment">
+    <form action="/blogs/newComment" method="POST">
+      <input type="hidden" name="postid" value="${post.id}">    
+      <div class="field">
+        <input type="text" name="subject" placeholder="Subject" id="commentSubject"></input>    
+        <textarea name="content" placeholder="Content" id="commentContent" style="display:none"></textarea>
+      </div>
+      <button class="ui button teal submit labeled icon" id="commentButton" style="display:none"><i class="forward mail icon"></i> Send </button>
+    </form>
+  </section>
+  #{/if}
+</section>

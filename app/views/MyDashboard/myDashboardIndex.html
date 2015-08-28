@@ -1,0 +1,24 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Dashboard' /}
+
+#{set activePage:'myDashboard' /}
+#{include "_components/_menu.html" /}
+
+
+<section class="ui tertiary purple inverted segment"><h1 class="ui header">${user.firstName} ${user.lastName}'s dashboard</h1></section>
+
+<section class="ui  two column grid segment">
+  <div class="row">
+    <div class="column">#{include "_components/createpost.html" /}</div>
+    <div class="column">#{include "_components/displayposts.html" /}</div>
+  </div>  
+  <div class="row">
+    <div class="column">#{include "_components/members.html" /}</div>
+    <div class="column">#{include "_components/friends.html" /}</div>
+  </div>
+
+  <div class="row">
+    <div class="column">#{include "_components/profileimagesNdetails.html"/}</div>
+    <div class="column">#{include "_components/statusUpdate.html"/} #{include "_components/messages.html" /} </div>
+  </div>
+</section>

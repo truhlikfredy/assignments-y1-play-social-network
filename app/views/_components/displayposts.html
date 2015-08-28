@@ -1,0 +1,19 @@
+<section class="ui secondary purple inverted segment">
+  <div class="ui medium image">
+    <label class="ui purple ribbon label"><i class="icon inverted circular orange stackexchange"></i>Published Posts &nbsp; (${userBlogs.posts.size()}) </label>
+  </div>  
+
+  <section class="ui segment">
+    #{list items:userBlogs.posts, as:'post'}
+      <h5 class="ui block header">
+        <a href="#{if activePage == 'blogs'}/blogs#{/if}#{else}/myBlog#{/else}/showPost/${post.id}">
+          <i class="text file outline icon"></i> ${post.title}
+        </a>
+         - ${new Date(post.time).since()}
+         (${post.comments.size()} comments)
+      </h5>
+    #{/list}#{else}
+      No blog posts published yet
+    #{/else}
+  </section> 
+</section>

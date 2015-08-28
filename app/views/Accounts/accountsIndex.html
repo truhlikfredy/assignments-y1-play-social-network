@@ -1,0 +1,40 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Welcome to Spacebook' /} 
+
+#{set activePage:'accountsWelcome' /} 
+#{include "_components/_menu.html" /}
+
+<section class="ui error two column grid form segment" style="display:none;position: relative;" id="loginSection">
+  <div class="row">
+    <div class="column">
+      #{include "_components/login.html" /}
+    </div>
+    <div class="column">
+      #{include "_components/publicBlogs.html" /}   
+    </div>
+  </div>    
+</section>  
+
+<section class="ui error two column grid form segment" style="display:none;position: relative;" id="signupSection">
+  <div class="row">
+    <div class="column">
+      #{include "_components/profileDetails.html" /}
+    </div>
+    <div class="column">
+      #{include "_components/publicBlogs.html" /} 
+    </div>
+  </div>
+</section>  
+
+<section class="ui raised segment" id="welcomeSection" >
+  <div class="ui grid">
+    <div class="center aligned column">
+      <img src="/public/images/splashScreenPrint.png" width="512" height="384" id="welcome_sound"><br><br>
+      <div class="ui buttons">
+        <a href="#" class="ui button positive labeled icon" id="loginButton"><i class="key icon"></i>Login</a> 
+        <span class="or"></span> 
+        <a href="#" class="ui button negative labeled icon" id="signupButton"><i class="keyboard icon"></i>Signup</a>
+      </div>
+    </div>
+  </div>
+</section>

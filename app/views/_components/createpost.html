@@ -1,0 +1,15 @@
+<section class="ui secondary purple inverted segment">
+  <div class="ui medium image">
+    <label class="ui purple ribbon label"><i class="icon inverted circular orange bullhorn"></i>Create a Post</label>
+  </div>  
+
+  <section class="ui form segment">
+    <form action="/myBlog/newpost" method="POST">
+      <div class="field">
+        <input type="text" name="title" placeholder="Title" id="blogTitle"></input>    
+        <textarea name="content" placeholder="Content" id="blogContent" style="display:none"></textarea>
+      </div>
+      <button class="ui button teal submit labeled icon" id="blogButton" style="display:none"><i class="icon edit"></i> Create </button>
+    </form>
+  </section>
+</section>

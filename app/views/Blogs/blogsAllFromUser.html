@@ -1,0 +1,23 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Blogs' /}
+
+#{set activePage:'blogs' /}
+#{include "_components/_menu.html" /}
+
+<section class="ui tertiary purple inverted segment">
+  <h1 class="ui header">
+    <img class="ui avatar image" src="/profile/getthumbnail/${userBlogs.id}"> 
+    ${userBlogs.firstName} ${userBlogs.lastName}'s blog
+  </h1>
+</section>
+<section class="ui segment">
+      *{*** workaround so I can reuse same components, but don't have to rename all. 
+            Problem is that I don't want to send user for the blog data, because in menu
+            the user variable is used to detect if you are logged in or not. In future I would
+            disalow use the "user" variable at all. But instead use really proper names, like
+            loggedUser, blogs, showUser so then never loggedUser variable woudn't get in conflict
+            when you want send the same user object but just to show content under name showUser.
+      ***}*
+      #{set user:userBlogs/}
+      #{include "_components/displayposts.html" /} 
+</section>

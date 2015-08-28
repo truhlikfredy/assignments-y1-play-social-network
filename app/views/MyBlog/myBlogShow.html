@@ -1,0 +1,10 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Blog' /}
+
+#{set activePage:'myBlog' /}
+#{include "_components/_menu.html" /}
+
+<section class="ui tertiary purple inverted segment"><h1 class="ui header">${user.firstName} ${user.lastName}'s blog post</h1></section>
+<section class="ui secondary purple inverted segment">
+  #{include "_components/displaypost.html" /} 
+</section>

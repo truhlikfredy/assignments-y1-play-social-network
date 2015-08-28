@@ -1,0 +1,62 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Landing page
+GET    /                                          Accounts.AccountsIndex
+
+# Accounts
+GET    /accounts/signup                           Accounts.accountsSignup
+GET    /accounts/login                            Accounts.accountsLogin
+GET    /accounts/logout                           Accounts.accountsLogout
+POST   /accounts/authenticate                     Accounts.accountsAuthenticate
+POST   /accounts/register                         Accounts.accountsRegister
+
+# Home page
+GET     /myHome                                   MyHome.myHomeIndex
+GET     /myHome/drop/{id}                         MyHome.myHomeDrop
+
+# Profile page
+GET     /myProfile                                MyProfile.myProfileIndex
+POST    /myProfile/changestatus                   MyProfile.myProfileChangeStatus
+POST    /myProfile/uploadpicture/{id}             MyProfile.myProfileUploadPicture
+POST    /myProfile/uploadthumbnail/{id}           MyProfile.myProfileUploadThumbnail
+POST    /myProfile/edit/update                    MyProfile.myProfileEditUpdate
+GET     /myProfile/edit                           MyProfile.myProfileEdit
+
+# Blog
+GET     /myBlog                                   MyBlog.myBlogIndex
+POST    /myBlog/newpost                           MyBlog.myBlogNewPost
+GET     /myBlog/deletepost/{postid}               MyBlog.myBlogDeletePost
+GET     /myBlog/showPost/{postid}                 MyBlog.myBlogShow
+
+# Dashboard
+GET     /myDashboard                              MyDashboard.myDashboardIndex
+
+
+# Members page
+GET     /members                                  Members.membersIndex
+GET     /members/follow/{id}                      Members.membersFollow
+
+# Public Profiles
+GET     /profile/getthumbnail/{id}                Profile.profileGetThumbnail
+GET     /profile/getpicture/{id}                  Profile.profileGetPicture
+GET     /profile/{id}                             Profile.profileShow
+POST    /profile/sendmessage/{id}                 Profile.profileSendMsg
+
+# Blogs
+GET     /blogs                                    Blogs.blogsIndex
+GET     /blogs/show/{id}                          Blogs.blogsAllFromUser
+GET     /blogs/showPost/{id}                      Blogs.blogsShowPost
+POST    /blogs/newComment                         Blogs.blogsNewComment
+GET     /blogs/deleteComment/{postId}/{commentId} Blogs.blogsDeleteComment
+
+
+# Ignore favicon requests
+GET   /favicon.ico                                staticFile:/public/images/favicon.ico
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                  staticDir:public
+
+# Catch all
+*       /{controller}/{action}                    {controller}.{action}

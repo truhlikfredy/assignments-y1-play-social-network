@@ -1,0 +1,88 @@
+*{**** There needs to be better way, not happy how it's done, but still better to having static menus, 
+        this one controlls ALL menus on the webpage. It's not easy to orient in, but it's the ONLY menu
+        we need to take care of. ****}*        
+
+*{****Setting up the variables, not good way and need to find way to reverse route to get the links 
+        like @{MyHome.myHomeIndex()} into variables ****}*
+#{set myHomeIcon:'home'/}            #{set myHomeTitle:'My home'/}              #{set myHomeLink:'/myHome'/}
+#{set myProfileIcon:'user'/}         #{set myProfileTitle:'My profile'/}        #{set myProfileLink:'/myProfile'/}
+#{set myEditProfileIcon:'edit'/}     #{set myEditProfileTitle:'Edit profile'/}  #{set myEditProfileLink:'/myProfile/edit'/}
+#{set myBlogIcon:'bullhorn'/}        #{set myBlogTitle:'My blog'/}              #{set myBlogLink:'/myBlog'/}
+#{set myDashboardIcon:'dashboard'/}  #{set myDashboardTitle:'My dashboard'/}    #{set myDashboardLink:'/myDashboard'/}
+
+*{****Checking if selected options for logged users or the unlogged ones ****}*
+#{if activePage == 'accountsWelcome' || activePage == 'accountsLogin' || activePage == 'accountsSignup'}
+  #{set loggedIn:false/}
+#{/if} #{else}
+  #{set loggedin:true/}
+  #{if activePage == 'blogs' && !user}
+    #{set loggedin:false/}
+  #{/if}
+#{/else}
+
+*{**** Will know if any of my**** options is selected, if it's selected and myHome is not selected then 
+      I can write the myHome into the pulldown submenu. It's working around fact that myHome is displayed on the top
+      when some other my***** options are selection but even when som other items are selected like members, or public 
+      blogs, but then in that case it's not as active and we need to distingish it when that happens. ****}*
+#{set mySelected:false/}
+
+*{**** Prepare the top item for the dropdown menu ****}*
+#{if activePage == 'myProfile'}
+  #{set topLink="<a class=\"active item\" href=\""+ myProfileLink +"\"><i class=\""+ myProfileIcon +" icon\"></i>"+ myProfileTitle +" &nbsp; <i class=\"down arrow icon\"></i></a>"/}
+  #{set mySelected:true/}  
+#{/if} #{elseif activePage == 'myProfileEdit'}
+  #{set topLink="<a class=\"active item\" href=\""+ myEditProfileLink +"\"><i class=\""+ myEditProfileIcon +" icon\"></i>"+ myEditProfileTitle +" &nbsp; <i class=\"down arrow icon\"></i></a>"/}
+  #{set mySelected:true/}  
+#{/elseif} #{elseif activePage == 'myBlog'}
+  #{set topLink="<a class=\"active item\" href=\""+ myBlogLink +"\"><i class=\""+ myBlogIcon +" icon\"></i>"+ myBlogTitle +" &nbsp; <i class=\"down arrow icon\"></i></a>"/}
+  #{set mySelected:true/}  
+#{/elseif} #{elseif activePage == 'myDashboard'}
+  #{set topLink="<a class=\"active item\" href=\""+ myDashboardLink +"\"><i class=\""+ myDashboardIcon +" icon\"></i>"+ myDashboardTitle +" &nbsp; <i class=\"down arrow icon\"></i></a>"/}
+  #{set mySelected:true/}  
+#{/elseif} #{else}
+  *{**** In case it's myHome show myHome, if it's anything else still create the top dropdown item for myHome but it won't be active ****}*
+
+  #{set topLink="<a class=\""+(activePage=="myHome"?"active":"")+" item\" href=\""+ myHomeLink +"\"><i class=\""+ myHomeIcon +" icon\"></i>"+ myHomeTitle +" &nbsp; <i class=\"down arrow icon\"></i></a>"/}
+  #{if activePage == 'myHome'}
+    #{set mySelected:true/}
+  #{/if}
+#{/else}
+
+*{**** Depending if you are logged in or not, will show some items, or hide some items ****}*
+<nav class="ui inverted large purple menu">
+  <header class="right header item" style="padding:0px;">
+  <a href="#{if loggedin}/myHome#{/if}#{else}/#{/else}"><img id="myLogo" src="/public/images/sb.png"></a>
+  </header>
+  <div class="left menu">
+  
+    #{if loggedin}
+    
+      <div class="ui dropdown">
+        ${topLink.raw()}
+        <div class="menu" id="makeLinks">
+          #{if activePage != 'myHome' && mySelected==true }<div class="item" data-myLink="${myHomeLink}"><i class="${myHomeIcon} icon"></i>${myHomeTitle}</div>#{/if}
+          #{if activePage != 'myProfile'}<div class="item" data-myLink="${myProfileLink}"><i class="${myProfileIcon} icon"></i>${myProfileTitle}</div>#{/if}
+          #{if activePage != 'myProfileEdit'}<div class="item" data-myLink="${myEditProfileLink}"><i class="${myEditProfileIcon} icon"></i>${myEditProfileTitle}</div>#{/if}
+          #{if activePage != 'myBlog'}<div class="item" data-myLink="${myBlogLink}"><i class="${myBlogIcon} icon"></i>${myBlogTitle}</div>#{/if}
+          #{if activePage != 'myDashboard'}<div class="item" data-myLink="${myDashboardLink}"><i class="${myDashboardIcon} icon"></i>${myDashboardTitle}</div>#{/if}
+        </div>
+      </div>
+      <a class="#{if activePage == 'members'}active #{/if}item"item" href="/members"><i class="users icon"></i>Members</a>
+    
+    #{/if} #{else}
+    
+      <a class="#{if activePage == 'accountsLogin'}active #{/if}item" href="/accounts/login" id="loginMenuItem"><i class="key icon"></i>Login</a>
+      <a class="#{if activePage == 'accountsSignup'}active #{/if}item" href="/accounts/signup" id="signupMenuItem"><i class="keyboard icon"></i>Signup</a>
+    
+    #{/else}
+    
+      <a class="#{if activePage == 'blogs'}active #{/if}item" href="/blogs"><i class="stackexchange icon"></i>Public blogs</a>
+      
+    #{if loggedin}
+    
+      <a class="item" href="/accounts/logout"><i class="eject icon"></i>Logout</a>
+    
+    #{/if}
+     
+  </div>
+</nav>

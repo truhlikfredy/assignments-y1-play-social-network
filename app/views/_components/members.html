@@ -1,0 +1,29 @@
+<section class="ui secondary purple inverted segment">
+  <div class="ui medium image">
+    <label class="ui purple ribbon label"><i class="icon inverted circular orange users"></i>Members &nbsp; (${usersToAdd.size()} members avaiable) </label>
+  </div>  
+
+  <section class="ui segment">
+    <div class="ui list"> 
+      #{list items:usersToAdd, as:'user'}
+        <div class="ui item">
+          <img class="ui avatar #{if !user.online || !user.showOnline}disabled#{/if} image" src="/profile/getthumbnail/${user.id}">        
+
+*{***
+          #{if user.online && user.showOnline} 
+            <i class="user green icon"></i>
+          #{/if}#{else}
+            <i class="user red icon"></i>
+          #{/else}
+***}*
+
+          <a href="/profile/${user.id}">${user.firstName} ${user.lastName}</a> : ${user.statusText} 
+          <a href="members/follow/${user.id}"><div class="right floated tiny teal ui button"><i class="add icon"></i>Add ${user.firstName}</div></a>
+          #{if user.showBlog && user.posts.size()>0}
+            <a href="blogs/show/${user.id}"><div class="right floated tiny purple ui button"><i class="bullhorn icon"></i>Blog</div></a>
+          #{/if}
+        </div>
+      #{/list}
+    </div>
+  </section>
+</section>

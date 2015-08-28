@@ -1,0 +1,14 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Signup for Spacebook' /}
+
+#{set activePage:'accountsSignup' /}
+#{include "_components/_menu.html" /}
+
+<section class="ui error two column grid form segment">
+  <div class="column">
+    #{include "_components/profileDetails.html" /}
+  </div>
+  <div class="column">
+    #{include "_components/publicBlogs.html" /}  
+  </div>
+</section>  

@@ -1,0 +1,13 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Edit profile details' /}
+
+#{set activePage:'myProfileEdit' /}
+#{include "_components/_menu.html" /}
+
+<section class="ui tertiary purple inverted segment"><h1 class="ui header">${user.firstName} ${user.lastName}'s account settings</h1></section>
+
+<section class="ui error two column middle aligned grid raised form segment">
+  <div class="column">
+    #{include "_components/profileDetails.html" /}
+  </div>
+</section>  

@@ -1,0 +1,28 @@
+# Ignore all dotfiles
+.*
+
+# Except this file
+!.gitignore
+
+
+
+# Ignore Play! temp files
+war
+db
+eclipse
+log
+logs
+modules
+precompiled
+project/project
+project/target
+crud/*
+data/*
+conf/crud/*
+public/crud/*
+target
+tmp
+test-result
+server.pid
+*.iml
+*.eml

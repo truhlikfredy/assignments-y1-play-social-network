@@ -1,0 +1,28 @@
+<section class="ui secondary inverted purple segment">
+  <div class="ui medium image">
+    <label class="ui purple ribbon label"><i class="icon inverted circular orange sitemap"></i>Friends &nbsp; (${user.friendships.size()})</label>
+  </div>
+
+  <section class="ui segment">
+    <div class="ui list"> 
+      #{list items:user.friendships, as:'friendship'}
+        <div class="ui item"> 
+          <img class="ui avatar #{if !friendship.targetUser.online || !friendship.targetUser.showOnline}disabled#{/if} image" src="/profile/getthumbnail/${friendship.targetUser.id}">        
+        
+*{***        
+          #{if friendship.targetUser.online && friendship.targetUser.showOnline} 
+            <i class="user green icon"></i>
+          #{/if}#{else}
+            <i class="user red icon"></i>
+          #{/else}
+***}*
+          <a href="/profile/${friendship.targetUser.id}"> ${friendship.targetUser.firstName} ${friendship.targetUser.lastName}</a> &nbsp;
+          <a href="/myHome/drop/${friendship.targetUser.id}"><div class="right floated tiny red ui button"><i class="remove icon"></i>Unfriend ${friendship.targetUser.firstName}</div></a>
+          #{if friendship.targetUser.showBlog && friendship.targetUser.posts.size()>0}
+            <a href="blogs/show/${friendship.targetUser.id}"><div class="right floated tiny purple ui button"><i class="bullhorn icon"></i>Blog</div></a>
+          #{/if}          
+        </div>
+      #{/list}
+    </div> 
+  </section>  
+</section>

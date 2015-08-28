@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="0.076" errors="0" skipped="0" tests="5" name="CommentTest">
+  <testcase classname="CommentTest" name="testCommentSize" time="0.016">
+      </testcase>
+  <testcase classname="CommentTest" name="testCommentCreate" time="0.016">
+      </testcase>
+  <testcase classname="CommentTest" name="testFindComment" time="0.011">
+      </testcase>
+  <testcase classname="CommentTest" name="testFindCommentByUser" time="0.016">
+      </testcase>
+  <testcase classname="CommentTest" name="testTimestamps" time="0.017">
+      </testcase>
+</testsuite>

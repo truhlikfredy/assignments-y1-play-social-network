@@ -1,0 +1,158 @@
+# lastActivity: 1420070400000
+# is in 2015, but it will get overwriten by current time when somebody will login.
+# This way I can still have timeout mechanisim and still see somebody online when
+# i'm testing it without a need to keep them online myself by loggining in. 
+
+User(homer):
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    age: 40
+    nationality: American
+    statusText: Where is my beer?
+    password: secret
+    online: true
+    showOnline: true
+    showBlog: true
+    lastActivity: 1420070400000
+
+User(marge):
+    firstName: Marge
+    lastName: Simpson
+    email: marge@simpson.com
+    age: 34
+    nationality: American
+    statusText: Argh!
+    password: secret
+    online: true
+    showOnline: true
+    showBlog: true
+    lastActivity: 1420070400000
+    
+User(bart):
+    firstName: Bart
+    lastName: Simpson
+    email: caramba@simpson.com
+    age: 10
+    nationality: American
+    statusText: Aey Caramba...
+    password: secret
+    online: true
+    showOnline: true
+    showBlog: true    
+    lastActivity: 1420070400000
+
+User(lisa):
+    firstName: Lisa
+    lastName: Simpson
+    email: lisa@simpson.com
+    age: 8
+    nationality: American
+    statusText: Just chilling.
+    password: secret
+    showOnline: true
+    showBlog: true    
+    lastActivity: 1420070400000
+    
+User(maggie):
+    firstName: Maggie
+    lastName: Simpson
+    email: maggie@simpson.com
+    password: secret
+    showOnline: true
+    showBlog: true    
+    lastActivity: 1420070400000
+    
+User(snowball):
+    firstName: SnowBall
+    lastName: TheSecond
+    email: snowball2@simpson.com
+    age: 3
+    nationality: United States Of Meowing
+    statusText: Meow?! 
+    password: secret    
+    online: true
+    showOnline: true
+    showBlog: false    
+    lastActivity: 1420070400000
+
+Message(message1):
+    from : snowball
+    to   : homer
+    messageText: 'How are you Homer?'
+
+Message(message2):
+    from : snowball
+    to   : homer
+    messageText: 'I mean MEOOOWWWW'
+    
+Message(message3):
+    from : marge
+    to   : homer
+    messageText: 'how are things going?'
+    
+Message(message4):
+    from : lisa
+    to   : homer
+    messageText: 'Get me outta here!'
+    
+Message(message5):
+    from : bart
+    to   : homer
+    messageText: '~(_8^(|)'
+    
+Message(message6):
+    from : lisa
+    to   : homer
+    messageText: 'Bart stop it! Mooooom.'
+
+Message(message7):
+    from : marge
+    to   : homer
+    messageText: 'Listen to your sister once in while!'
+    
+Friendship(homer-marge): 
+    sourceUser : homer
+    targetUser : marge
+    
+Friendship(homer-snowball): 
+    sourceUser : homer
+    targetUser : snowball
+    
+
+Friendship(marge-homer): 
+    sourceUser : marge
+    targetUser : homer   
+           
+User(homer):
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    age: 40
+    nationality: American
+    statusText: Where is my beer?
+    password: secret
+    online: true
+    showOnline: true
+    showBlog: true    
+    lastActivity: 1420070400000
+    friendships:
+              - homer-marge
+              - homer-snowball
+                            
+User(marge):
+    firstName: Marge
+    lastName: Simpson
+    email: marge@simpson.com
+    age: 34
+    nationality: American
+    statusText: Argh!
+    password: secret
+    online: true
+    showOnline: true
+    showBlog: true
+    lastActivity: 1420070400000
+    friendships:
+              - marge-homer 
+                            
+                           

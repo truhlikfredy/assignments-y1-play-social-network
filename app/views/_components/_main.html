@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>#{get 'title' /}</title>
+    <link rel="stylesheet" type="text/css" href="@{'/public/semantic/css/semantic.css'}">   
+*{*** 
+      I personaly hate websites which make sounds and I consider it as bad design taste, and
+      at most mine websites made 1 sound on very very special ocasion, but never used any kinds
+      of frameworks or plugins. So this is not really real website so I gave it a try.
+      Sorry for the sounds, but I wanted to try them.
+      
+      I minified my javascrit file as well and merged all javascript files into one, on server 
+      there are still original sources (for debuging all other reasons). But on public website
+      now we are usign less requests per page (and most likely they will get cached anyway, so
+      less checking with just one file). On other hand I'm wasting requests on eastereggs and 
+      other things, so it's not lightweight as it could be, but removing animations, sounds and
+      easter eggs is easy to achive quickly. And they are not required for the website to be working,
+      maybe I would say they do pososite, distract etc... (but wanted to try them).  
+      
+      This website used for minifying: http://jscompress.com/      
+***}*
+
+#{set myJavascriptDebug:false/}
+
+#{if myJavascriptDebug}
+    <script src="@{'/public/javascripts/jquery-2.0.3.min.js'}"></script> 
+    <script src="@{'/public/javascripts/ion.sound.min.js'}"></script>
+    <script src="@{'/public/javascripts/mine.js'}"></script>
+    <script src="@{'/public/semantic/javascript/semantic.min.js'}"></script>
+#{/if}#{else}    
+    <script src="@{'/public/javascripts/all.js'}"></script>
+#{/else}
+    
+  </head>    
+  <body>
+    <div id="cat" style="position:absolute;left:-400px;top:100px;display:none;z-index:200"><img src="/public/images/cat-plane.png"></div>
+    <div id="zoidberg" style="position:absolute;top:100px;display:none;z-index:100"><img src="/public/images/zoidberg.png"></div>
+    <div id="cat2" style="position:absolute;left:0px;top:100px;display:none;z-index:200"><img src="/public/images/cat-tank.png"></div>
+    <div id="zoidberg2" style="position:absolute;top:0px;display:none;z-index:100"><img src="/public/images/zoidberg2.png"></div>
+    #{doLayout /}
+  </body>
+</html>

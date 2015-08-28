@@ -1,0 +1,13 @@
+  <div class="ui medium image">
+    <label class="ui purple ribbon label"><i class="icon inverted circular orange text file outline"></i>${post.title}</label>
+  </div>  
+
+<section class="ui segment">
+  <p>${post.content}:</p>
+  <div class="ui buttons">
+    <a href="/blogs/showPost/${post.id}" class="ui button positive labeled icon"><i class="bullhorn icon"></i>Public version with comments</a> 
+    <span class="or"></span> 
+    <a href="/myBlog/deletepost/${post.id}" class="ui button negative labeled icon" onClick="return(confirmDialog());"><i class="delete icon"></i>Delete</a>
+  </div>       
+</section>
+

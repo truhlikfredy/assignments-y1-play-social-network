@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="0.075" errors="0" skipped="0" tests="5" name="BlogTest">
+  <testcase classname="BlogTest" name="testCreatePost" time="0.027">
+      </testcase>
+  <testcase classname="BlogTest" name="testCreateMultiplePosts" time="0.01">
+      </testcase>
+  <testcase classname="BlogTest" name="testDeletePost" time="0.013">
+      </testcase>
+  <testcase classname="BlogTest" name="testCommentsOnPosts" time="0.015">
+      </testcase>
+  <testcase classname="BlogTest" name="testTimestamps" time="0.01">
+      </testcase>
+</testsuite>

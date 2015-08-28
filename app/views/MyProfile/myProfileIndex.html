@@ -1,0 +1,17 @@
+#{extends '_components/_main.html' /} 
+#{set title:'Profile' /}
+
+#{set activePage:'myProfile' /}
+#{include "_components/_menu.html" /}
+
+<section class="ui tertiary purple inverted segment"><h1 class="ui header">${user.firstName} ${user.lastName}'s profile</h1></section>
+<section class="ui two column grid segment">
+  <div class="row">
+    <div class="column">
+      #{include "_components/profileimagesNdetails.html" /} 
+    </div>
+    <div class="column">
+      #{include "_components/statusUpdate.html" /}   
+    </div>
+  </div>
+</section>
