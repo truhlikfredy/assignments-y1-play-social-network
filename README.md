@@ -19,6 +19,9 @@ College 1st year webdesign assignment called spacebook. Writen in Java using Pla
 (https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/02.png?token=ABC5iYkBCbXVbS_wf38J5tDrwpAKW5i9ks5V6YT6wA%3D%3D)
 
 #Download
+[spacebook.zip](https://github.com/truhlikfredy/assignments-y1-play-social-network/archive/v1.0.zip)
+
+[spacebook.tar.gz](https://github.com/truhlikfredy/assignments-y1-play-social-network/archive/v1.0.tar.gz)
 
 # Eclipse import
 **play eclipsify** needs to be run to import into eclipse with all paths setup properly.
