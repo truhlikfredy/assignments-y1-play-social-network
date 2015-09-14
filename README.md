@@ -2,7 +2,7 @@
 College 1st year webdesign assignment called spacebook. Writen in Java using Play framework.
 
 ![Title screen image]
-(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/01.png?token=ABC5iYLnFzMuQT4qFglbJdoXOY2zfqPsks5V6YHNwA%3D%3D)
+(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/01.png)
 
 # Features
 * Ready to import Eclipse project (tested on kepler and mars).
@@ -16,7 +16,7 @@ College 1st year webdesign assignment called spacebook. Writen in Java using Pla
  * Hosted on Cloudbees and Debian hosting.
 
 ![After login image]
-(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/02.png?token=ABC5iYkBCbXVbS_wf38J5tDrwpAKW5i9ks5V6YT6wA%3D%3D)
+(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/02.png)
 
 #Download
 [spacebook.zip](https://github.com/truhlikfredy/assignments-y1-play-social-network/archive/v1.0.zip)
@@ -40,7 +40,7 @@ Website will be aviable on **http://localhost:9000/**
 * Type **zoidberg** anywhere to trigger animations and sounds.
 
 ![Easter egg image]
-(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/03.png?token=ABC5iay21qbWbMvD0sIEUO0nAZFWaa_Uks5V6YU6wA%3D%3D)
+(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/03.png)
 
 # Default passwords
 Following accounts are pre-populated:
