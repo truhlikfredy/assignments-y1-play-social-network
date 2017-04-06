@@ -1,8 +1,7 @@
 # assignments-y1-play-social-network
 College 1st year webdesign assignment called spacebook. Writen in Java using Play framework.
 
-![Title screen image]
-(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/01.png)
+![Title screen image](/screenShots/01.png)
 
 # Features
 * Ready to import Eclipse project (tested on kepler and mars).
@@ -15,18 +14,20 @@ College 1st year webdesign assignment called spacebook. Writen in Java using Pla
  * Windows 7/8 and Debian 5-7.
  * Hosted on Cloudbees and Debian hosting.
 
-![After login image]
-(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/02.png)
+![After login image](/screenShots/02.png)
 
-#Download
+# Download
+
 [spacebook.zip](https://github.com/truhlikfredy/assignments-y1-play-social-network/archive/v1.0.zip)
 
 [spacebook.tar.gz](https://github.com/truhlikfredy/assignments-y1-play-social-network/archive/v1.0.tar.gz)
 
 # Eclipse import
+
 **play eclipsify** needs to be run to import into eclipse with all paths setup properly.
 
 # Running the application
+
 In command line this command needs to be executed:
 
 **play run**
@@ -36,13 +37,14 @@ If this gives a error, probably the play framework is not installed.
 Website will be aviable on **http://localhost:9000/**
 
 # Easter eggs
+
 * Hover over spacebook logo for few seconds to get sound queue.
 * Type **zoidberg** anywhere to trigger animations and sounds.
 
-![Easter egg image]
-(https://raw.githubusercontent.com/truhlikfredy/assignments-y1-play-social-network/master/screenShots/03.png)
+![Easter egg image](/screenShots/03.png)
 
 # Default passwords
+
 Following accounts are pre-populated:
 
 * homer@simpson.com
